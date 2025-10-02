@@ -76,7 +76,8 @@ Use "tech-test [command] --help" for more information about a command.
 
 The build process for this code has been completed using a multi-stage Dockerfile. The Dockerfile uses the official Golang image to build the code and then copies the binary to a smaller Alpine image for running. the Tests are executed during the build to validate that no errors are present and that the code is functioning as expected.
 
-NOTE: the Builder and Output container bases are pinned to the speicific hash of the base image to ensure that the build is repeatable.
+NOTE: the Builder and Output container bases are pinned to the speicific hash of the base image to ensure that the build is repeatable and
+adheres to best practices regarding supply chain security.
 
 To build the Docker image, run the following command from the root of the repository:
 
