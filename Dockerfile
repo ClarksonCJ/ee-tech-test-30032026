@@ -1,0 +1,1 @@
+FROM golang:1.24.4-alpine@sha256:25f0ae8a9452540a6ffa309395ca983e199b28dae84e9611c99a7587cff38e73 AS builder
