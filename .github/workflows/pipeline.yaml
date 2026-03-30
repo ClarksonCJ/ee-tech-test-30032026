@@ -9,7 +9,7 @@ jobs:
     permissions:
       contents: read
     name: Build
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     services:
       registry:
         image: registry@sha256:6c5666b861f3505b116bb9aa9b25175e71210414bd010d92035ff64018f9457e
