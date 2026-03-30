@@ -30,4 +30,4 @@ jobs:
         with:
           push: true
           platforms: linux/amd64,linux/arm64
-          tags: horus.tail0122b2.ts.net/ee-tech-test:v1
+          tags: host.docker.internal:5000/ee-tech-test:v1
