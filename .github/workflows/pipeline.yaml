@@ -29,4 +29,5 @@ jobs:
         uses: docker/build-push-action@d08e5c354a6adb9ed34480a06d141179aa583294
         with:
           push: true
+          platforms: linux/amd64,linux/arm64
           tags: horus.tail0122b2.ts.net/ee-tech-test:v1
