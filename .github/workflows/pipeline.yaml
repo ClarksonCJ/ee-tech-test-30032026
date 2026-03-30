@@ -9,15 +9,16 @@ jobs:
     permissions:
       contents: read
     name: Build
-    runs-on: self-hosted
-    services:
-      registry:
-        image: registry@sha256:6c5666b861f3505b116bb9aa9b25175e71210414bd010d92035ff64018f9457e
-        ports:
-          - 5000:5000
+    runs-on: ubuntu-latest
     steps:
       - name: checkout
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+      - name: TailScale Connection
+        uses: tailscale/github-action@306e68a486fd2350f2bfc3b19fcd143891a4a2d8
+        with:
+          oauth-client-id: ${{ secrets.TAILSCALE_OAUTH_CLIENT_ID }}
+          oauth-secret: ${{ secrets.TAILSCALE_OAUTH_SECRET }}
+          tags: tag:ci
       - name: set up qemu
         uses: docker/setup-qemu-action@ce360397dd3f832beb865e1373c09c0e9f86d70a
       - name: docker-build-publish
@@ -27,5 +28,6 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@d08e5c354a6adb9ed34480a06d141179aa583294
         with:
+          registry: 100.76.73.107:5000
           push: true
-          tags: localhost:5000/ee-tech-test/clarksoncj:v1
+          tags: ee-tech-test/clarksoncj:v1
