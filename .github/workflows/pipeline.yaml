@@ -28,6 +28,5 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@d08e5c354a6adb9ed34480a06d141179aa583294
         with:
-          registry: 100.76.73.107:5000
           push: true
-          tags: ee-tech-test/clarksoncj:v1
+          tags: 100.76.73.107:5000/ee-tech-test/clarksoncj:v1
