@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: tech-test
+  name: tech-test
+spec:
+  containers:
+  - image: horus.tail0122b2.ts.net/ee-tech-test:v1
+    name: tech-test
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
